@@ -1,0 +1,2 @@
+# AraSum
+Arab Summarization Corpus
