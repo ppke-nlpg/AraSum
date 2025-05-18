@@ -1,11 +1,23 @@
 # AraSum 
 
 
+This repository contains **AraSum**, the first large-scale **monolingual Arabic corpus** for **abstractive text summarization**, as well as two newly released datasets for **preference-based fine-tuning**:
+
+- `AraRLHF`: A dataset formatted for Reinforcement Learning from Human Feedback (RLHF)
+- `AraDPO`: A dataset formatted for Direct Preference Optimization (DPO)
+
+
+## 📚 Datasets
+
+
+### 🔹 AraSum
+### 🔹 AraRLHF
+### 🔹 AraDPO
+
+
+## 🔖 Citation
+
 This repository contains the **AraSum** corpus which is the first monolingual corpus in the Arabic language for abstractive text summarization. For details of how we created the corpus, please refer to our paper: [**Cross-lingual Fine-tuning for Abstractive Arabic Text Summarization**](https://aclanthology.org/2021.ranlp-1.74/) published in the _Proceedings of the International Conference on Recent Advances in Natural Language Processing (RANLP 2021)_.
-
-
-
-
 We are releasing the **AraSum** corpus which is the first monolingual corpus for abstractive text summarization for the Arabic language. The **AraSum** corpus contains 49604 articles and their corresponding leads.
 
 
