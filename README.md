@@ -11,24 +11,49 @@ This repository contains **AraSum**, the first large-scale **monolingual Arabic 
 
 
 ### 🔹 AraSum
+
+AraSum is a monolingual Arabic summarization corpus containing **49,604 articles and their corresponding leads**. It was constructed from the **Arabic version of the Deutsche Welle (DW) news website**, covering diverse domains such as politics, sports, and culture. This diversity promotes better generalization in summarization models.
+
+- **Format**: `.csv`
+- **Structure**: Each line contains an article and its lead summary, separated by a tab (`\t`)
+
+**Related Publications**  
+For more details on the creation and usage of this dataset, please refer to the following papers:
+
+- [**Cross-lingual Fine-tuning for Abstractive Arabic Text Summarization**](https://aclanthology.org/2021.ranlp-1.74/)  
+  *Proceedings of the International Conference on Recent Advances in Natural Language Processing (RANLP 2021)*
+
+- [**Fine-tuning and Multilingual Pre-training for Abstractive Summarization Task for the Arabic Language**](https://doi.org/10.33039/ami.2022.11.002)  
+  *Annales Mathematicae et Informaticae (2022)*
+
 ### 🔹 AraRLHF
+
+A JSON-formatted dataset designed for **training reward models** in Reinforcement Learning from Human Feedback (RLHF) pipelines.
+The AraRLHF dataset consists of **1,746 samples**, derived from **manual evaluation results** conducted in our prior research.
+
+This dataset is used to **train a reward model (RM)** that predicts the quality of a generated summary based on human preferences.
+
+
+- **Format**: `.json`
+- **Structure**: Each record includes: An article, its lead summary, a ranking label reflecting human preference, and the evaluator ID (author)
+  
 ### 🔹 AraDPO
+
+A JSON-formatted dataset designed for **Direct Preference Optimization (DPO)**, following the same structure as **AraRLHF**.
+The AraDPO dataset is used to fine-tune language models directly using **binary preference pairs**.
+To construct AraDPO, each ranked preference entry in AraRLHF was converted into all possible pairwise comparisons. The final dataset contains **29,682 binary preference records**.
+
+This dataset is used to **Fine-tuning language models with DPO**.
+
+- **Format**: `.json`
+- **Structure**: Each record includes an article, its lead summary, and a label `1` or `0`  (**preferred** (`1`) or **dispreferred** (`0`)).
 
 
 ## 🔖 Citation
 
-This repository contains the **AraSum** corpus which is the first monolingual corpus in the Arabic language for abstractive text summarization. For details of how we created the corpus, please refer to our paper: [**Cross-lingual Fine-tuning for Abstractive Arabic Text Summarization**](https://aclanthology.org/2021.ranlp-1.74/) published in the _Proceedings of the International Conference on Recent Advances in Natural Language Processing (RANLP 2021)_.
-We are releasing the **AraSum** corpus which is the first monolingual corpus for abstractive text summarization for the Arabic language. The **AraSum** corpus contains 49604 articles and their corresponding leads.
+If you use **AraSum**, please cite:
 
-
-The source for **AraSum** corpus is the Arabic version of the Deutsche Welle DW news website. The downloaded items address a wide range of topics, not only dealing with politics, sports, or art. This allows the summary database to cover a wide range of topics, making more realistic testing of the capabilities of the summarization models as well as the creation of more robust and less domain-dependent models possible.
-
-
-AraSum files are in ```.csv``` format one CSV per line each line contains an article TAB lead.
-
-## Citation: 
-If you use our corpus, please cite the following paper: 
-```
+```bibtex
 @inproceedings{kahla-etal-2021-cross,
     title = "Cross-lingual Fine-tuning for Abstractive {A}rabic Text Summarization",
     author = "Kahla, Mram  and
@@ -43,3 +68,10 @@ If you use our corpus, please cite the following paper:
     pages = "655--663",
 }
 ```
+
+We will release formal citations for AraRLHF and AraDPO soon. Until then, please link to this repository.
+
+
+
+
+
