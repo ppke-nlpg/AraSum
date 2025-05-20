@@ -41,12 +41,12 @@ This dataset is used to **train a reward model (RM)** that predicts the quality 
 
 A JSON-formatted dataset designed for **Direct Preference Optimization (DPO)**, following the same structure as **AraRLHF**.
 The AraDPO dataset is used to fine-tune language models directly using **binary preference pairs**.
-To construct AraDPO, each ranked preference entry in AraRLHF was converted into all possible pairwise comparisons. The final dataset contains **29,682 binary preference records**.
+To construct AraDPO, each ranked preference entry in AraRLHF was converted into all possible pairwise comparisons. We then applied deduplication to remove redundant or overlapping pairs, resulting in a final set of **2,309 unique preference records**.
 
 This dataset is used to **Fine-tuning language models with DPO**.
 
 - **Format**: `.json`
-- **Structure**: Each record includes an article, its lead summary, and a label `1` or `0`  (**preferred** (`1`) or **dispreferred** (`0`)).
+- **Structure**: Each record includes: article_id, article, chosen (the preferred summary ), and rejected (the dispreferred summary).
 
 
 ## 🔖 Citation
